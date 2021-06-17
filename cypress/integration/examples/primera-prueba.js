@@ -1,19 +1,19 @@
+/// <reference types="Cypress"/>
+
 //Suite de casos que contiene cada caso
 describe('Primer conjunto casos de prueba', () => {
 
     //Caso 1
-    it('Ingresar a la pag principal', () => {
-        //Paso 1
-        //Paso 2
-        //Paso 3
-
+    it('Contabilizar cantidad elementos', () => {
+        //Ingresamos en la página
         cy.visit('http://automationpractice.com/index.php');
-        cy.get('.login').click();
-
+        //Verificar cantidad de elementos visibles
+        cy.get('#homefeatured .product-container').should('have.length', 7);
+        
     });
     //Caso 2
 
     //Caso 3
 
 
-})
+});
