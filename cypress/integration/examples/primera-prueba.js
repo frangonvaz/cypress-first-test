@@ -50,7 +50,7 @@ describe('Primer conjunto casos de prueba', () => {
     */
 
     //Caso 3
-
+    /*
     it('Verificar dropdown tenga elementos necesarios', () => {
 
         //Flotando sobre un elemento (emulando hover y dropdown)
@@ -64,6 +64,15 @@ describe('Primer conjunto casos de prueba', () => {
         cy.get('a[title^="Evening"]').should('be.visible');
         cy.get('a[title^="Summer"]').should('be.visible');
     });
+    */
 
+    //Caso 4
+
+    it('Verificar que checkboxes funcionan correctamente', () => {
+        cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').click();
+        cy.get('li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-casual_dresses"]) input[type="checkbox"]').check().should('be.checked');
+        cy.get('li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-evening_dresses"]) input[type="checkbox"]').should('not.be.checked');
+        cy.get('li[class="nomargin hiddable col-lg-6"]:has(a[href*="categories-summer_dresses"]) input[type="checkbox"]').should('not.be.checked');
+    });
 
 });
